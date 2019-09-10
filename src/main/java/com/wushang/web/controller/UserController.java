@@ -25,7 +25,6 @@ public class UserController {
 	public User userInfo(@PathVariable() Integer id) {
 		User user = new User("wushang", "123");
 		user.setId(id);
-		int i = 1 / 0;
 		return user;
 
 	}
@@ -41,5 +40,11 @@ public class UserController {
 	public String register(String username,String password){
 		userService.register(username,password);
 		return "success";
+	}
+
+	@RequestMapping("find")
+	@ResponseBody
+	public User find(String username){
+		return userService.findByUsername(username);
 	}
 }

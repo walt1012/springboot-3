@@ -1,5 +1,7 @@
 package com.wushang.service;
 
+import com.wushang.model.User;
+
 /**
  * @ClassName IUserService
  * @Description TODO
@@ -8,4 +10,5 @@ package com.wushang.service;
  */
 public interface IUserService {
 	public void register(String username,String password);
+	public User findByUsername(String username);
 }
