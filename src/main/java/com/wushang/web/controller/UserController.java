@@ -1,8 +1,8 @@
 package com.wushang.web.controller;
 
 import com.wushang.model.User;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import com.wushang.service.IUserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -30,7 +30,16 @@ public class UserController {
 
 	}
 
-	public static void main(String[] args) {
-		SpringApplication.run(UserController.class, args);
+	// public static void main(String[] args) {
+	// 	SpringApplication.run(UserController.class, args);
+	// }
+
+	@Autowired
+	private IUserService userService;
+
+	@RequestMapping("register")
+	public String register(String username,String password){
+		userService.register(username,password);
+		return "success";
 	}
 }
