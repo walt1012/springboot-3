@@ -69,6 +69,19 @@
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
+
+    <!--添加jta 管理多个数据源事务-->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-jta-atomikos</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-configuration-processor</artifactId>
+      <optional>true</optional>
+    </dependency>
+
   </dependencies>
 
   <build>
